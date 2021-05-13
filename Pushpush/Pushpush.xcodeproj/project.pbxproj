@@ -16,6 +16,9 @@
 		048074B726369EF7006B5D80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 048074B626369EF7006B5D80 /* main.m */; };
 		048074C126369EF7006B5D80 /* PushpushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048074C026369EF7006B5D80 /* PushpushTests.m */; };
 		048074CC26369EF7006B5D80 /* PushpushUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048074CB26369EF7006B5D80 /* PushpushUITests.m */; };
+		04BB71C4264D752800287779 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BB71C3264D752800287779 /* ConfigViewController.m */; };
+		04DBE9A9264D78CC00B07730 /* MsgeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DBE9A7264D78CC00B07730 /* MsgeTableViewCell.m */; };
+		04DBE9AA264D78CC00B07730 /* MsgeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DBE9A8264D78CC00B07730 /* MsgeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,11 @@
 		048074CB26369EF7006B5D80 /* PushpushUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushpushUITests.m; sourceTree = "<group>"; };
 		048074CD26369EF7006B5D80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048074DF2636A14B006B5D80 /* Pushpush.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pushpush.entitlements; sourceTree = "<group>"; };
+		04BB71C2264D752800287779 /* ConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		04BB71C3264D752800287779 /* ConfigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		04DBE9A6264D78CC00B07730 /* MsgeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgeTableViewCell.h; sourceTree = "<group>"; };
+		04DBE9A7264D78CC00B07730 /* MsgeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgeTableViewCell.m; sourceTree = "<group>"; };
+		04DBE9A8264D78CC00B07730 /* MsgeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MsgeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +113,12 @@
 		048074A326369EF4006B5D80 /* Pushpush */ = {
 			isa = PBXGroup;
 			children = (
+				04BB71C1264D74EB00287779 /* Controller */,
 				048074DF2636A14B006B5D80 /* Pushpush.entitlements */,
 				048074A426369EF4006B5D80 /* AppDelegate.h */,
 				048074A526369EF4006B5D80 /* AppDelegate.m */,
 				048074A726369EF4006B5D80 /* SceneDelegate.h */,
 				048074A826369EF4006B5D80 /* SceneDelegate.m */,
-				048074AA26369EF4006B5D80 /* ViewController.h */,
-				048074AB26369EF4006B5D80 /* ViewController.m */,
 				048074AD26369EF4006B5D80 /* Main.storyboard */,
 				048074B026369EF7006B5D80 /* Assets.xcassets */,
 				048074B226369EF7006B5D80 /* LaunchScreen.storyboard */,
@@ -137,6 +144,20 @@
 				048074CD26369EF7006B5D80 /* Info.plist */,
 			);
 			path = PushpushUITests;
+			sourceTree = "<group>";
+		};
+		04BB71C1264D74EB00287779 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				048074AA26369EF4006B5D80 /* ViewController.h */,
+				048074AB26369EF4006B5D80 /* ViewController.m */,
+				04BB71C2264D752800287779 /* ConfigViewController.h */,
+				04BB71C3264D752800287779 /* ConfigViewController.m */,
+				04DBE9A6264D78CC00B07730 /* MsgeTableViewCell.h */,
+				04DBE9A7264D78CC00B07730 /* MsgeTableViewCell.m */,
+				04DBE9A8264D78CC00B07730 /* MsgeTableViewCell.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				048074B426369EF7006B5D80 /* LaunchScreen.storyboard in Resources */,
+				04DBE9AA264D78CC00B07730 /* MsgeTableViewCell.xib in Resources */,
 				048074B126369EF7006B5D80 /* Assets.xcassets in Resources */,
 				048074AF26369EF4006B5D80 /* Main.storyboard in Resources */,
 			);
@@ -271,6 +293,8 @@
 				048074AC26369EF4006B5D80 /* ViewController.m in Sources */,
 				048074A626369EF4006B5D80 /* AppDelegate.m in Sources */,
 				048074B726369EF7006B5D80 /* main.m in Sources */,
+				04DBE9A9264D78CC00B07730 /* MsgeTableViewCell.m in Sources */,
+				04BB71C4264D752800287779 /* ConfigViewController.m in Sources */,
 				048074A926369EF4006B5D80 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

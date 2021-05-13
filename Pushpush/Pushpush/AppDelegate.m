@@ -69,6 +69,11 @@
     [NSUserDefaults.standardUserDefaults setObject:seclusionrestitution forKey:@"PushKey"];
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSLog(@"userInfo == %@", userInfo);
+}
+
 #pragma mark - UISceneSession lifecycle
 
 
