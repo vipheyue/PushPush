@@ -16,6 +16,8 @@
 		048074B726369EF7006B5D80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 048074B626369EF7006B5D80 /* main.m */; };
 		048074C126369EF7006B5D80 /* PushpushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048074C026369EF7006B5D80 /* PushpushTests.m */; };
 		048074CC26369EF7006B5D80 /* PushpushUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048074CB26369EF7006B5D80 /* PushpushUITests.m */; };
+		04A33DE92650AB2200A70AE8 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A33DE82650AB2200A70AE8 /* NotificationService.m */; };
+		04A33DED2650AB2200A70AE8 /* PushServiceExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 04A33DE52650AB2200A70AE8 /* PushServiceExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04BB71C4264D752800287779 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BB71C3264D752800287779 /* ConfigViewController.m */; };
 		04DBE9A9264D78CC00B07730 /* MsgeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DBE9A7264D78CC00B07730 /* MsgeTableViewCell.m */; };
 		04DBE9AA264D78CC00B07730 /* MsgeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DBE9A8264D78CC00B07730 /* MsgeTableViewCell.xib */; };
@@ -36,7 +38,28 @@
 			remoteGlobalIDString = 048074A026369EF4006B5D80;
 			remoteInfo = Pushpush;
 		};
+		04A33DEB2650AB2200A70AE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0480749926369EF4006B5D80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04A33DE42650AB2200A70AE8;
+			remoteInfo = PushServiceExt;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04A33DEE2650AB2200A70AE8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				04A33DED2650AB2200A70AE8 /* PushServiceExt.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		048074A126369EF4006B5D80 /* Pushpush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pushpush.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +81,10 @@
 		048074CB26369EF7006B5D80 /* PushpushUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushpushUITests.m; sourceTree = "<group>"; };
 		048074CD26369EF7006B5D80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048074DF2636A14B006B5D80 /* Pushpush.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pushpush.entitlements; sourceTree = "<group>"; };
+		04A33DE52650AB2200A70AE8 /* PushServiceExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PushServiceExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		04A33DE72650AB2200A70AE8 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		04A33DE82650AB2200A70AE8 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		04A33DEA2650AB2200A70AE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04BB71C2264D752800287779 /* ConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		04BB71C3264D752800287779 /* ConfigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 		04DBE9A6264D78CC00B07730 /* MsgeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgeTableViewCell.h; sourceTree = "<group>"; };
@@ -87,6 +114,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04A33DE22650AB2200A70AE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,6 +130,7 @@
 				048074A326369EF4006B5D80 /* Pushpush */,
 				048074BF26369EF7006B5D80 /* PushpushTests */,
 				048074CA26369EF7006B5D80 /* PushpushUITests */,
+				04A33DE62650AB2200A70AE8 /* PushServiceExt */,
 				048074A226369EF4006B5D80 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +141,7 @@
 				048074A126369EF4006B5D80 /* Pushpush.app */,
 				048074BC26369EF7006B5D80 /* PushpushTests.xctest */,
 				048074C726369EF7006B5D80 /* PushpushUITests.xctest */,
+				04A33DE52650AB2200A70AE8 /* PushServiceExt.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +182,16 @@
 			path = PushpushUITests;
 			sourceTree = "<group>";
 		};
+		04A33DE62650AB2200A70AE8 /* PushServiceExt */ = {
+			isa = PBXGroup;
+			children = (
+				04A33DE72650AB2200A70AE8 /* NotificationService.h */,
+				04A33DE82650AB2200A70AE8 /* NotificationService.m */,
+				04A33DEA2650AB2200A70AE8 /* Info.plist */,
+			);
+			path = PushServiceExt;
+			sourceTree = "<group>";
+		};
 		04BB71C1264D74EB00287779 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,10 +216,12 @@
 				0480749D26369EF4006B5D80 /* Sources */,
 				0480749E26369EF4006B5D80 /* Frameworks */,
 				0480749F26369EF4006B5D80 /* Resources */,
+				04A33DEE2650AB2200A70AE8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				04A33DEC2650AB2200A70AE8 /* PBXTargetDependency */,
 			);
 			name = Pushpush;
 			productName = Pushpush;
@@ -216,6 +264,23 @@
 			productReference = 048074C726369EF7006B5D80 /* PushpushUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		04A33DE42650AB2200A70AE8 /* PushServiceExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04A33DF12650AB2200A70AE8 /* Build configuration list for PBXNativeTarget "PushServiceExt" */;
+			buildPhases = (
+				04A33DE12650AB2200A70AE8 /* Sources */,
+				04A33DE22650AB2200A70AE8 /* Frameworks */,
+				04A33DE32650AB2200A70AE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PushServiceExt;
+			productName = PushServiceExt;
+			productReference = 04A33DE52650AB2200A70AE8 /* PushServiceExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -235,6 +300,9 @@
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = 048074A026369EF4006B5D80;
 					};
+					04A33DE42650AB2200A70AE8 = {
+						CreatedOnToolsVersion = 12.3;
+					};
 				};
 			};
 			buildConfigurationList = 0480749C26369EF4006B5D80 /* Build configuration list for PBXProject "Pushpush" */;
@@ -253,6 +321,7 @@
 				048074A026369EF4006B5D80 /* Pushpush */,
 				048074BB26369EF7006B5D80 /* PushpushTests */,
 				048074C626369EF7006B5D80 /* PushpushUITests */,
+				04A33DE42650AB2200A70AE8 /* PushServiceExt */,
 			);
 		};
 /* End PBXProject section */
@@ -277,6 +346,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		048074C526369EF7006B5D80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04A33DE32650AB2200A70AE8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -315,6 +391,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04A33DE12650AB2200A70AE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A33DE92650AB2200A70AE8 /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -327,6 +411,11 @@
 			isa = PBXTargetDependency;
 			target = 048074A026369EF4006B5D80 /* Pushpush */;
 			targetProxy = 048074C826369EF7006B5D80 /* PBXContainerItemProxy */;
+		};
+		04A33DEC2650AB2200A70AE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04A33DE42650AB2200A70AE8 /* PushServiceExt */;
+			targetProxy = 04A33DEB2650AB2200A70AE8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -580,6 +669,44 @@
 			};
 			name = Release;
 		};
+		04A33DEF2650AB2200A70AE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7TM5U36L66;
+				INFOPLIST_FILE = PushServiceExt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pushpush1.PushServiceExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		04A33DF02650AB2200A70AE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7TM5U36L66;
+				INFOPLIST_FILE = PushServiceExt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pushpush1.PushServiceExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -615,6 +742,15 @@
 			buildConfigurations = (
 				048074D726369EF7006B5D80 /* Debug */,
 				048074D826369EF7006B5D80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04A33DF12650AB2200A70AE8 /* Build configuration list for PBXNativeTarget "PushServiceExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04A33DEF2650AB2200A70AE8 /* Debug */,
+				04A33DF02650AB2200A70AE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
