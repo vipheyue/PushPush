@@ -1,0 +1,26 @@
+PODS:
+  - Bugly (2.5.90)
+  - Realm (2.10.2):
+    - Realm/Headers (= 2.10.2)
+  - Realm/Headers (2.10.2)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - Bugly
+  - Realm
+  - SVProgressHUD
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Bugly
+    - Realm
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Bugly: 88bc32c0acc6fef7b74d610f0319ee7560d6b9fe
+  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: f5dac85adabefc46378ca44670e32079ff0c2a54
+
+COCOAPODS: 1.6.0.beta.2

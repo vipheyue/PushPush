@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NqR-zw-axJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NqR-zw-axJ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="9999" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -67,17 +67,14 @@
         <!--配置-->
         <scene sceneID="2Rn-el-Z9i">
             <objects>
-                <viewController id="3FZ-NT-sj9" customClass="ConfigViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfigViewController" id="3FZ-NT-sj9" customClass="ConfigViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WXB-c6-I79">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请输入想要收到的消息" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="o23-Yx-TvO">
-                                <rect key="frame" x="20" y="118" width="374" height="300"/>
+                                <rect key="frame" x="20" y="118" width="374" height="624"/>
                                 <color key="backgroundColor" red="0.090196078430000007" green="0.72549019609999998" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="tK2-Bt-W1M"/>
-                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -89,7 +86,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ux-tx-vlm">
-                                <rect key="frame" x="30" y="772" width="354" height="40"/>
+                                <rect key="frame" x="20" y="772" width="374" height="40"/>
                                 <color key="backgroundColor" red="0.090196078430000007" green="0.72549019609999998" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Lbz-Qb-Ehn"/>
@@ -112,16 +109,18 @@
                         <viewLayoutGuide key="safeArea" id="5DC-Dh-ZUT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3ux-tx-vlm" firstAttribute="top" secondItem="o23-Yx-TvO" secondAttribute="bottom" constant="30" id="1WZ-b9-7hj"/>
+                            <constraint firstItem="3ux-tx-vlm" firstAttribute="leading" secondItem="o23-Yx-TvO" secondAttribute="leading" id="2Qi-6C-Tnr"/>
+                            <constraint firstItem="3ux-tx-vlm" firstAttribute="trailing" secondItem="o23-Yx-TvO" secondAttribute="trailing" id="N6T-gF-aCW"/>
                             <constraint firstItem="o23-Yx-TvO" firstAttribute="leading" secondItem="5DC-Dh-ZUT" secondAttribute="leading" constant="20" id="Nkn-B5-L05"/>
                             <constraint firstItem="5DC-Dh-ZUT" firstAttribute="bottom" secondItem="3ux-tx-vlm" secondAttribute="bottom" constant="50" id="eDO-iG-whv"/>
-                            <constraint firstItem="5DC-Dh-ZUT" firstAttribute="trailing" secondItem="3ux-tx-vlm" secondAttribute="trailing" constant="30" id="iX7-C2-d6c"/>
                             <constraint firstItem="5DC-Dh-ZUT" firstAttribute="trailing" secondItem="o23-Yx-TvO" secondAttribute="trailing" constant="20" id="nIE-ZF-XPV"/>
-                            <constraint firstItem="3ux-tx-vlm" firstAttribute="leading" secondItem="5DC-Dh-ZUT" secondAttribute="leading" constant="30" id="qUa-LQ-knc"/>
                             <constraint firstItem="o23-Yx-TvO" firstAttribute="top" secondItem="5DC-Dh-ZUT" secondAttribute="top" constant="30" id="wYv-ju-oLI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="配置" id="RTR-si-nov"/>
                     <connections>
+                        <outlet property="linkButton" destination="3ux-tx-vlm" id="5NN-kG-SAm"/>
                         <outlet property="textView" destination="o23-Yx-TvO" id="Io2-sj-mXa"/>
                     </connections>
                 </viewController>

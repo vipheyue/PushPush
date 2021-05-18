@@ -6,10 +6,12 @@
 //
 
 #import "ConfigViewController.h"
+#import <SVProgressHUD.h>
 
 @interface ConfigViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIButton *linkButton;
 
 @end
 
@@ -18,6 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if (self.model.acceptTime) {
+        self.title = self.model.acceptTime;
+        self.linkButton.hidden = YES;
+        self.textView.text = self.model.contentMsg;
+        self.textView.editable = NO;
+    }
 }
 
 - (IBAction)buttonEvent:(UIButton *)sender {
@@ -27,6 +36,9 @@
         pab.string = [NSString stringWithFormat:@"http://s.welightworld.com:8083/push/%@?send=%@", [NSUserDefaults.standardUserDefaults objectForKey:@"PushKey"], self.textView.text];
         if (pab) {
             NSLog(@"复制成功");
+            [SVProgressHUD showImage:nil status:@"生成链接成功，已复制"];
+            [SVProgressHUD setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.3]];
+            [SVProgressHUD dismissWithDelay:2];
             
         }
         else {

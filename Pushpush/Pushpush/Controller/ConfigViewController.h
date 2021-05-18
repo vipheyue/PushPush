@@ -6,10 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RlmData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ConfigViewController : UIViewController
+
+@property (nonatomic, strong) RlmData *model;
 
 @end
 

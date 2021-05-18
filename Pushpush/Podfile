@@ -1,0 +1,15 @@
+platform :ios, '7.0'
+target 'Pushpush' do
+
+  # 数据转换
+  pod 'Bugly'
+  pod 'SVProgressHUD'
+  pod 'Realm'
+
+end
+
+target 'PushServiceExt' do
+  
+  pod 'Realm'
+  
+end
