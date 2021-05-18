@@ -113,7 +113,7 @@
 {
     if (self.dataArray.count > indexPath.row) {
         
-        RlmData *model = self.dataArray[indexPath.row];
+        RlmData *model = self.dataArray[self.dataArray.count - 1 - indexPath.row];
         ConfigViewController *configView = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass(ConfigViewController.class)];
         configView.model = model;
         [self.navigationController pushViewController:configView animated:YES];
