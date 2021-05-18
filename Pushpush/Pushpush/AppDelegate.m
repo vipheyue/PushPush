@@ -74,6 +74,14 @@
     NSLog(@"userInfo == %@", userInfo);
 }
 
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
+{
+    NSLog(@"userInfo1 == %@", notification.request.content.body);
+    completionHandler(UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionBadge);
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PushMsg" object:nil];
+}
+
 #pragma mark - UISceneSession lifecycle
 
 

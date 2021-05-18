@@ -34,24 +34,9 @@
     self.tableView.delegate = self;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(MsgeTableViewCell.class) bundle:nil] forCellReuseIdentifier:NSStringFromClass(MsgeTableViewCell.class)];
     
-    NSURL *groupURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.smsgroupExt"];
-    NSURL *fileURL = [groupURL URLByAppendingPathComponent:@"push.realm"];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receive) name:@"PushMsg" object:nil];
     
-    RLMRealmConfiguration *config = [[RLMRealmConfiguration alloc] init];
-    config.fileURL = fileURL;
-    config.schemaVersion = 1.0;
-    config.migrationBlock = ^(RLMMigration * _Nonnull migration, uint64_t oldSchemaVersion) {
-
-    };
-    RLMRealm *realm = [RLMRealm realmWithConfiguration:config error:nil];
-    
-    RLMResults *otherDogs = [RlmData allObjectsInRealm:realm]; // 从该 Realm 数据库中，检索所有狗狗
-        
-    for (RlmData *tanD in otherDogs) {
-        NSLog(@"tand:%@", tanD);
-        [self.dataArray addObject:tanD];
-    }
-    
+    [self getMsgData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -64,6 +49,37 @@
 {
     [super viewWillDisappear:animated];
     self.title = @"";
+}
+
+- (void)receive
+{
+    [self getMsgData];
+}
+
+- (void)getMsgData
+{
+    NSURL *groupURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.smsgroupExt"];
+    NSURL *fileURL = [groupURL URLByAppendingPathComponent:@"push.realm"];
+    
+    RLMRealmConfiguration *config = [[RLMRealmConfiguration alloc] init];
+    config.fileURL = fileURL;
+    config.schemaVersion = 1.0;
+    config.migrationBlock = ^(RLMMigration * _Nonnull migration, uint64_t oldSchemaVersion) {
+
+    };
+    RLMRealm *realm = [RLMRealm realmWithConfiguration:config error:nil];
+    
+    RLMResults *otherDogs = [RlmData allObjectsInRealm:realm]; // 从该 Realm 数据库中，检索所有狗狗
+    
+    if (self.dataArray.count) {
+        [self.dataArray removeAllObjects];
+    }
+    for (RlmData *tanD in otherDogs) {
+        NSLog(@"tand:%@", tanD);
+        [self.dataArray addObject:tanD];
+    }
+    
+    [self.tableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
