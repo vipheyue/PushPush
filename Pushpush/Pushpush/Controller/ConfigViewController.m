@@ -28,7 +28,7 @@
         self.linkButton.hidden = YES;
         self.textView.text = self.model.contentMsg;
         self.textView.editable = NO;
-        self.heightLayou.constant = self.view.frame.size.height-100;
+        self.heightLayou.constant = self.view.frame.size.height-150;
         self.dispreLab.hidden = YES;
     }
 }
@@ -36,15 +36,18 @@
 - (IBAction)buttonEvent:(UIButton *)sender {
     
     if (self.textView.text.length && [[NSUserDefaults.standardUserDefaults objectForKey:@"PushKey"] length]) {
+        
+        NSString *urlStr = [NSString stringWithFormat:@"http://s.welightworld.com:8083/push/%@", [NSUserDefaults.standardUserDefaults objectForKey:@"PushKey"]];
+        NSString *pramStr = [NSString stringWithFormat:@"send=%@", [self URLEncodedString:self.textView.text]];
+        
         UIPasteboard *pab = [UIPasteboard generalPasteboard];
-        pab.string = [NSString stringWithFormat:@"http://s.welightworld.com:8083/push/%@?send=%@", [NSUserDefaults.standardUserDefaults objectForKey:@"PushKey"], self.textView.text];
+        pab.string = [NSString stringWithFormat:@"%@?%@", urlStr, pramStr];
         if (pab) {
-            NSLog(@"复制成功");
-            [SVProgressHUD showImage:nil status:@"生成链接成功"];
+            [SVProgressHUD showImage:nil status:@"已复制,您现在可以粘贴到自己的服务器上去请求"];
             [SVProgressHUD setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.3]];
             [SVProgressHUD dismissWithDelay:2];
             
-            [self pushEvent:[NSString stringWithFormat:@"http://s.welightworld.com:8083/push/%@", [NSUserDefaults.standardUserDefaults objectForKey:@"PushKey"]] withPram:[NSString stringWithFormat:@"send=%@", self.textView.text]];
+            [self pushEvent:urlStr withPram:pramStr];
         }
         else {
             NSLog(@"复制失败");
@@ -54,6 +57,15 @@
         NSLog(@"内容为空或者deviceToken为空");
     }
     
+}
+
+- (NSString *)URLEncodedString:(NSString *) unencodedString
+{
+    NSString *charactersToEscape = @"?!@#$^&%*+,:;='\"`<>()[]{}/\\| ";
+    NSCharacterSet *allowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:charactersToEscape] invertedSet];
+    NSString *encodeString = [unencodedString stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
+
+    return encodeString;
 }
 
 - (void)pushEvent:(NSString *) pushUrl withPram:(NSString *) pramStr

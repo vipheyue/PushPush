@@ -95,7 +95,7 @@
                                     <constraint firstAttribute="height" constant="40" id="Lbz-Qb-Ehn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="点击生成测试链接">
+                                <state key="normal" title="点我获取推送地址">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -109,12 +109,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnc-n2-pMC">
-                                <rect key="frame" x="20" y="518" width="374" height="107.5"/>
+                                <rect key="frame" x="20" y="518" width="374" height="143.5"/>
                                 <string key="text">- 点击上方按钮 可收到一条测试推送并自动复制链接到剪切板
 
 - 您粘贴到浏览器或者webhook地址 即可
 
-- 可向本地址发送psot/get 请求带任意参数都可以</string>
+- 可向本地址发送psot/get 请求带任意参数都可以
+
+- 请求参数 key任意都行,value建议url编码</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
